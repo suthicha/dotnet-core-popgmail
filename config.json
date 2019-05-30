@@ -1,0 +1,7 @@
+{
+    "Host": "imap.gmail.com",
+    "Port": 993,
+    "isSSL": true,
+    "EmailAddress": "user@gmail.com",
+    "EmailPassword": "your_password"
+}

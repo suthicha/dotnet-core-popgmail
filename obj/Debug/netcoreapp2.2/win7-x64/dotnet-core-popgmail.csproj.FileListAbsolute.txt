@@ -1,0 +1,14 @@
+/Users/iamsuthicha/Desktop/Developer/demo/dotnet-core-popgmail/bin/Debug/netcoreapp2.2/win7-x64/hostpolicy.dll
+/Users/iamsuthicha/Desktop/Developer/demo/dotnet-core-popgmail/bin/Debug/netcoreapp2.2/win7-x64/hostfxr.dll
+/Users/iamsuthicha/Desktop/Developer/demo/dotnet-core-popgmail/bin/Debug/netcoreapp2.2/win7-x64/dotnet-core-popgmail.exe
+/Users/iamsuthicha/Desktop/Developer/demo/dotnet-core-popgmail/bin/Debug/netcoreapp2.2/win7-x64/dotnet-core-popgmail.deps.json
+/Users/iamsuthicha/Desktop/Developer/demo/dotnet-core-popgmail/bin/Debug/netcoreapp2.2/win7-x64/dotnet-core-popgmail.runtimeconfig.json
+/Users/iamsuthicha/Desktop/Developer/demo/dotnet-core-popgmail/bin/Debug/netcoreapp2.2/win7-x64/dotnet-core-popgmail.runtimeconfig.dev.json
+/Users/iamsuthicha/Desktop/Developer/demo/dotnet-core-popgmail/bin/Debug/netcoreapp2.2/win7-x64/dotnet-core-popgmail.dll
+/Users/iamsuthicha/Desktop/Developer/demo/dotnet-core-popgmail/bin/Debug/netcoreapp2.2/win7-x64/dotnet-core-popgmail.pdb
+/Users/iamsuthicha/Desktop/Developer/demo/dotnet-core-popgmail/obj/Debug/netcoreapp2.2/win7-x64/dotnet-core-popgmail.csprojAssemblyReference.cache
+/Users/iamsuthicha/Desktop/Developer/demo/dotnet-core-popgmail/obj/Debug/netcoreapp2.2/win7-x64/dotnet-core-popgmail.csproj.CoreCompileInputs.cache
+/Users/iamsuthicha/Desktop/Developer/demo/dotnet-core-popgmail/obj/Debug/netcoreapp2.2/win7-x64/dotnet-core-popgmail.AssemblyInfoInputs.cache
+/Users/iamsuthicha/Desktop/Developer/demo/dotnet-core-popgmail/obj/Debug/netcoreapp2.2/win7-x64/dotnet-core-popgmail.AssemblyInfo.cs
+/Users/iamsuthicha/Desktop/Developer/demo/dotnet-core-popgmail/obj/Debug/netcoreapp2.2/win7-x64/dotnet-core-popgmail.dll
+/Users/iamsuthicha/Desktop/Developer/demo/dotnet-core-popgmail/obj/Debug/netcoreapp2.2/win7-x64/dotnet-core-popgmail.pdb
