@@ -18,6 +18,10 @@ namespace dotnet_core_popgmail
             MailSettings mSettings = new MailSettings();
             _mailClientObj = new MailClient(mSettings.Read());
             _mailClientObj.Read("EXP_NMB_WMLOT");
+
+            DbSettings dbSettings = new DbSettings();
+            InvoiceExp mInvoiceExp = new InvoiceExp(dbSettings.GetConnectionString());
+            mInvoiceExp.ReadExcelToDb();
             
         }
     }

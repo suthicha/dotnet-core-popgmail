@@ -3,5 +3,9 @@
     "Port": 993,
     "isSSL": true,
     "EmailAddress": "user@gmail.com",
-    "EmailPassword": "your_password"
+    "EmailPassword": "your_password",
+    "DB_Server": "198.1.1.3",
+    "DB_UserId": "sa",
+    "DB_Password": "zy01sy?",
+    "DB_Database": "EDIDATA1"
 }
