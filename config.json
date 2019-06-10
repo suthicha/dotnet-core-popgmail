@@ -4,8 +4,8 @@
     "isSSL": true,
     "EmailAddress": "user@gmail.com",
     "EmailPassword": "your_password",
-    "DB_Server": "198.1.1.3",
-    "DB_UserId": "sa",
-    "DB_Password": "zy01sy?",
-    "DB_Database": "EDIDATA1"
+    "DB_Server": "127.0.0.1",
+    "DB_UserId": "user",
+    "DB_Password": "password",
+    "DB_Database": "DATA"
 }
