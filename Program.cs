@@ -1,5 +1,9 @@
 ﻿using System;
-using System.IO;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Hosting;
 
 using MailKit.Net.Imap;
 using MailKit.Search;
@@ -8,20 +12,27 @@ using MimeKit;
 
 namespace dotnet_core_popgmail
 {
-    class Program
+    internal class Program
     {
 
-        static private MailClient _mailClientObj;
-        static void Main(string[] args)
+        private static async Task Main(string[] args)
         {
+            var isService = !(Debugger.IsAttached || args.Contains("--console"));
 
-            MailSettings mSettings = new MailSettings();
-            _mailClientObj = new MailClient(mSettings.Read());
-            _mailClientObj.Read("EXP_NMB_WMLOT");
+            var builder = new HostBuilder()
+                .ConfigureServices((hostContext, services) => {
+                    services.AddHostedService<DataService>();
+                });
 
-            DbSettings dbSettings = new DbSettings();
-            InvoiceExp mInvoiceExp = new InvoiceExp(dbSettings.GetConnectionString());
-            mInvoiceExp.ReadExcelToDb();
+            if (isService){
+                await builder.RunAsServiceAsync();
+            }
+            else
+            {
+                await builder.RunConsoleAsync();
+            }
+
+            
             
         }
     }

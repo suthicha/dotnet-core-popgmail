@@ -21,23 +21,25 @@ namespace dotnet_core_popgmail {
 
             foreach (string file in files)
             {
+                Logger.WriteLog("Read file " + file);
+
                 var obj = ConvertExcelToInvoiceObj(file);
                 var execStatus = Insert(obj.ToArray());
-                
+                Logger.WriteLog("Executed status => " + execStatus.ToString());
+
                 if (execStatus){
                     DeleteFile(file);
                 }
-
-                break;
             }
-
-
         }
 
         private void DeleteFile(string filename){
             try{
                 File.Delete(filename);
-            }catch{}
+                Logger.WriteLog("Delete file " + filename);
+            }catch (Exception ex){
+                Logger.WriteLog("ERROR " + ex.Message);
+            }
         }
 
         private bool Insert(params Invoice[] invoices){
@@ -50,6 +52,12 @@ namespace dotnet_core_popgmail {
                 cmd.Transaction = trans;
 
                 try {
+
+                    cmd.CommandText = @"DELETE DT010_WMLOT WHERE INVNO=@INVNO";
+                    cmd.CommandType = CommandType.Text;
+                    cmd.Parameters.AddWithValue("@INVNO", invoices[0].InvoiceNo);
+                    cmd.ExecuteNonQuery();
+                    cmd.Parameters.Clear();
 
                     cmd.CommandText = "SP_DT010_WMLOT_INSERT";
                     cmd.CommandType = CommandType.StoredProcedure;
@@ -83,8 +91,9 @@ namespace dotnet_core_popgmail {
 
                     return true;
 
-                }catch {
+                }catch (Exception ex) {
                     trans.Rollback();
+                    Logger.WriteLog("ERROR " + ex.Message);
                 }
             }
             return false;
@@ -116,8 +125,8 @@ namespace dotnet_core_popgmail {
                     }
                 }
 
-            }catch {
-                
+            }catch(Exception ex){
+                Logger.WriteLog("ERROR " + ex.Message);
             }
             return invObj;
         }
