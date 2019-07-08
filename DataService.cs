@@ -27,13 +27,17 @@ namespace dotnet_core_popgmail {
 
         private void Processing(){
             
-            MailSettings mSettings = new MailSettings();
-            MailClient _mailClientObj = new MailClient(mSettings.Read());
-            _mailClientObj.Read("EXP_NMB_WMLOT");
+            try {
+                MailSettings mSettings = new MailSettings();
+                MailClient _mailClientObj = new MailClient(mSettings.Read());
+                _mailClientObj.Read("EXP_NMB_WMLOT");
 
-            DbSettings dbSettings = new DbSettings();
-            InvoiceExp mInvoiceExp = new InvoiceExp(dbSettings.GetConnectionString());
-            mInvoiceExp.ReadExcelToDb();
+                DbSettings dbSettings = new DbSettings();
+                InvoiceExp mInvoiceExp = new InvoiceExp(dbSettings.GetConnectionString());
+                mInvoiceExp.ReadExcelToDb();
+            }catch (Exception ex){
+                Logger.WriteLog("ERROR : " + ex.Message);
+            }
         }
 
         public Task StopAsync(CancellationToken cancellationToken)
